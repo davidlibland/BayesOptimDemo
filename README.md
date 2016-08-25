@@ -11,7 +11,11 @@ We want to model the data near x=0 via the following model
 ![y=ax+b+\epsilon](latex_imgs/y=ax+b.png)
 
 where ![\epsilon](latex_imgs/epsilon.png) is noise which depends on x.
-Notice that there are some extreme outliers, so using a least-squares approach doesn't lead to a good fit. we need ![\epsilon](latex_imgs/epsilon.png) to *heavy-tailed*; so we fit a student t distribution (where the mode, scale, and shape all depend on x) using gradient descent.
+Notice that there are some extreme outliers, so using a least-squares approach doesn't lead to a good fit:
+
+![unregularized_fit](readme_imgs/unreg.png)
+
+We need ![\epsilon](latex_imgs/epsilon.png) to *heavy-tailed*; so we fit a student t distribution (where the mode, scale, and shape all depend on x) using gradient descent.
 
 Of course, this is a toy problem, which we are playing with because it is simple to visualize; this tutorial is really about Bayesian optimization:
 The challenge is that we won't acheive a good fit without proper regularization, and we then need to choose hyperparameters ![\lambda_1,\dots,\lambda_n](latex_imgs/lambdas.png) to control the regularization. For any given choice of hyperparameters, we can fit our model on a training subset of the data, and then evaluate the fit on a cross-validation subset of data leading to an error function:
@@ -45,5 +49,9 @@ and we repeat until our model fits ![\varepsilon_{CV}](latex_imgs/varepsilon.png
 ![Gaussian Process fit to four samples](readme_imgs/gp3.png)
 
 Finally, we use the resulting model to make an optimal choice for our hyperparameters ![\lambda_1,\dots,\lambda_n](latex_imgs/lambdas.png).
+
+This leads to a much better fit:
+
+![regularized_fit](readme_imgs/reg.png)
 
 The full tutorial can be found in the jupyter notebook `RegressionWithBayesOpt.ipynb`.
