@@ -2,7 +2,9 @@
 A short demonstration where bayesian optimization is used to make a good choice of hyperparameters.
 
 Consider the following data set (pictured at two separate scales):
+
 ![Scatter Plot of Data](readme_imgs/data_scatter_plot.png)
+
 There seems to be a linear relationship between x and y, and the y-values seem to concentrate near x=0 and disperse for large values of x.
 We want to model the data near x=0 via the following model
 
