@@ -1,5 +1,5 @@
 # Bayesian Optimization Exploration
-A short exploration of using bayesian optimization to make a good choice of hyperparameters.
+A short exploration of using bayesian optimization to make a good choice of hyperparameters. The detailed jupyter notebook can be found in [`RegressionWithBayesOpt.ipynb`](RegressionWithBayesOpt.ipynb).
 
 Consider the following data set (pictured at two separate scales):
 
