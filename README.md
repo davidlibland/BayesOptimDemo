@@ -1,5 +1,5 @@
-# Bayesian Optimization Demo
-A short demonstration where bayesian optimization is used to make a good choice of hyperparameters.
+# Bayesian Optimization Exploration
+A short exploration of using bayesian optimization to make a good choice of hyperparameters.
 
 Consider the following data set (pictured at two separate scales):
 
@@ -17,7 +17,7 @@ Notice that there are some extreme outliers, so using a least-squares approach d
 
 We need ![\epsilon](latex_imgs/epsilon.png) to *heavy-tailed*; so we fit a student t distribution (where the mode, scale, and shape all depend on x) using gradient descent.
 
-Of course, this is a toy problem, which we are playing with because it is simple to visualize; this tutorial is really about Bayesian optimization:
+Of course, this is a toy problem, which we are playing with because it is simple to visualize; this exploration is really about Bayesian optimization:
 The challenge is that we won't acheive a good fit without proper regularization, and we then need to choose hyperparameters ![\lambda_1,\dots,\lambda_n](latex_imgs/lambdas.png) to control the regularization. For any given choice of hyperparameters, we can fit our model on a training subset of the data, and then evaluate the fit on a cross-validation subset of data leading to an error function:
 
 ![\varepsilon_{CV}(\lambda_1,\dots,\lambda_n):=\textrm{CrossValidationError}(\lambda_1,\dots,\lambda_n)](latex_imgs/varepsdef.png)
@@ -54,4 +54,4 @@ This leads to a much better fit (green is the probability density, purple is one
 
 ![regularized_fit](readme_imgs/reg.png)
 
-The full tutorial can be found in the jupyter notebook `RegressionWithBayesOpt.ipynb`.
+The full tutorial (with lots of comments and details) can be found in the jupyter notebook `RegressionWithBayesOpt.ipynb`.
