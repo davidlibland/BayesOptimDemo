@@ -13,7 +13,7 @@ We want to model the data near x=0 via the following model
 where ![\epsilon](latex_imgs/epsilon.png) is noise which depends on x.
 Notice that there are some extreme outliers, so using a least-squares approach doesn't lead to a good fit:
 
-![unregularized_fit](readme_imgs/unreg.png)
+![unregularized_fit](readme_imgs/lst_sqr.png)
 
 We need ![\epsilon](latex_imgs/epsilon.png) to *heavy-tailed*; so we fit a student t distribution (where the mode, scale, and shape all depend on x) using gradient descent.
 
@@ -50,7 +50,7 @@ and we repeat until our model fits ![\varepsilon_{CV}](latex_imgs/varepsilon.png
 
 Finally, we use the resulting model to make an optimal choice for our hyperparameters ![\lambda_1,\dots,\lambda_n](latex_imgs/lambdas.png).
 
-This leads to a much better fit:
+This leads to a much better fit (green is the probability density, purple is one standard deviation - only when defined):
 
 ![regularized_fit](readme_imgs/reg.png)
 
