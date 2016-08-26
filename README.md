@@ -54,4 +54,4 @@ This leads to a much better fit (green is the probability density, purple is one
 
 ![regularized_fit](readme_imgs/reg.png)
 
-The full tutorial (with lots of comments and details) can be found in the jupyter notebook `RegressionWithBayesOpt.ipynb`.
+The full tutorial (with lots of comments and details) can be found in the jupyter notebook [`RegressionWithBayesOpt.ipynb`](RegressionWithBayesOpt.ipynb).
